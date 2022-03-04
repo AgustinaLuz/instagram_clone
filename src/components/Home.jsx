@@ -23,18 +23,18 @@ const Home = () => {
 
     useEffect (() => {
         getPosts();
-    }, [posts])
+    }, [])
 
     return (
         <>
         {
-            !posts ? 'cargando' :
-            posts.map((post) => {
-                <div id={post.id}>
-                    <img src={post.image}></img>
+            !posts ? 'loading' :
+            posts.map((post) => (
+                <div id={post.id} className="post">
+                    <h2> {post.owner.firstName} {post.owner.lastName}</h2>
                     <p>{post.likes}</p>
                     </div>
-            })
+            ))
         }
         </>
     )
