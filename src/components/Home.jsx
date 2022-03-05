@@ -1,6 +1,7 @@
 import axios from "axios";
 import react, { useState, useEffect } from "react";
-
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -26,17 +27,31 @@ const Home = () => {
     }, [])
 
     return (
-        <>
+        <div className="home_container">
         {
             !posts ? 'loading' :
             posts.map((post) => (
+                <div className="main_posts">
                 <div id={post.id} className="post">
-                    <h2> {post.owner.firstName} {post.owner.lastName}</h2>
-                    <p>{post.likes}</p>
+                    <h2 className="user_name"> {post.owner.firstName} {post.owner.lastName}</h2>
+                    <div className="pic_div">
+                    <img src={post.image} className="pictures"></img>
                     </div>
+                         <div className="likes_box">
+                                <div className="likes_icon">
+                                <FavoriteBorderIcon variant="contained"></FavoriteBorderIcon>
+                                </div>
+                        <p className="likes">{post.likes} Me gusta</p>
+                                <div className="comment_icon">
+                                <ChatBubbleOutlineIcon variant="contained"></ChatBubbleOutlineIcon>
+                                </div>
+                    </div>
+                    </div>
+                </div>
+                    
             ))
         }
-        </>
+        </div>
     )
 
 }

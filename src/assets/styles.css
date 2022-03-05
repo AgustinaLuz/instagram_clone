@@ -1,3 +1,62 @@
+/* NAVBAR*/
+.navbar_container {
+  background-color: rgba(var(--d87, 255, 255, 255), 1);
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.nav_bar_box {
+  width: fit-content;
+  margin: auto;
+}
+.icons_boxed {
+  display: flex;
+}
+.icon_ig {
+  margin-top: 13px;
+  margin-right: 36px;
+}
+/* HOME */
+.home_container {
+  padding-top: 60px;
+}
+.main_posts {
+  width: 500px;
+  margin: auto;
+  margin-top: 40px;
+}
 .post {
-  border: 2px solid black;
+  background-color: rgba(var(--d87, 255, 255, 255), 1);
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3px;
+}
+.user_name {
+  margin: 20px;
+  color: rgba(var(--f75, 38, 38, 38), 1);
+}
+.pictures {
+  max-width: -webkit-fill-available;
+}
+.likes_box {
+  display: flex;
+}
+.like_div {
+  width: 30px;
+}
+.likes_icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+}
+.likes {
+  margin: 20px;
+}
+.comment_icon {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
 }
