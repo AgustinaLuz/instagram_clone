@@ -1,25 +1,3 @@
-/* NAVBAR*/
-.navbar_container {
-  background-color: rgba(var(--d87, 255, 255, 255), 1);
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
-  border-radius: 3px;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 3;
-}
-.nav_bar_box {
-  width: fit-content;
-  margin: auto;
-}
-.icons_boxed {
-  display: flex;
-}
-.icon_ig {
-  margin-top: 13px;
-  margin-right: 36px;
-}
 /* HOME */
 .home_container {
   padding-top: 60px;

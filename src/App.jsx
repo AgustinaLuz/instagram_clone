@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import Home from  './components/Home'
-import Navbar from './components/Navbar'
+import Profile from './components/Profile'
+import NotFoundPage from './components/NotFoundPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import './assets/index.css'
 
 function App() {
 
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='*' element={<NotFoundPage/>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

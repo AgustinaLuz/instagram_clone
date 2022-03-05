@@ -2,6 +2,7 @@ import axios from "axios";
 import react, { useState, useEffect } from "react";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import Navbar from "./Navbar";
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -28,6 +29,7 @@ const Home = () => {
 
     return (
         <div className="home_container">
+        <Navbar />
         {
             !posts ? 'loading' :
             posts.map((post) => (
