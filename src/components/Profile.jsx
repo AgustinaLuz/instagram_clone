@@ -5,7 +5,7 @@ const Profile = () => {
 
 
     return (
-        <div>
+        <div className="ProfileContainer">
             <Navbar />
             <h1>profile</h1>
         </div>
