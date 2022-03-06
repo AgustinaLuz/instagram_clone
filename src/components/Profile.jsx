@@ -79,6 +79,7 @@ const Profile = () => {
                         postImg={post.image} 
                         likes={post.likes} 
                         tags={post.tags}
+                        onlyPic={true}
                         />  
                     ))}
                 </div>

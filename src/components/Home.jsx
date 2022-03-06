@@ -42,6 +42,7 @@ const Home = () => {
                             postImg={post.image} 
                             likes={post.likes} 
                             tags={post.tags}
+                            onlyPic={false}
                         />                            
                     ))}
                 </div>
