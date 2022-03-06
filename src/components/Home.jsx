@@ -3,6 +3,8 @@ import react, { useState, useEffect } from "react";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import Navbar from "./Navbar";
+import { NavLink } from "react-router-dom";
+import Profile from "./Profile";
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -15,7 +17,7 @@ const Home = () => {
         })
         .then((res) => {
             setPosts(res.data.data);
-            console.table(posts);
+            console.table(res.data.data);
             console.log(posts);
         })
         .catch((err)=> {
@@ -35,11 +37,14 @@ const Home = () => {
             posts.map((post) => (
                 <div className="main_posts">
                 <div id={post.id} className="post">
-                    <h2 className="user_name"> {post.owner.firstName} {post.owner.lastName}</h2>
+                    <div className="namePic"><img src={post.owner.picture} ></img></div>
+                    <NavLink to={`/profile/${post.owner.id}`}>
+                        <h2 className="user_name"> {post.owner.firstName} {post.owner.lastName}</h2>
+                    </NavLink>
                     <div className="pic_div">
-                    <img src={post.image} className="pictures"></img>
+                        <img src={post.image} className="pictures"></img>
                     </div>
-                         <div className="likes_box">
+                    <div className="likes_box">
                                 <div className="likes_icon">
                                 <FavoriteBorderIcon variant="contained"></FavoriteBorderIcon>
                                 </div>
