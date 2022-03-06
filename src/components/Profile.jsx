@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import { useParams, useSearchParams } from "react-router-dom";
+import PostComponent from "./PostComponent";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
     const [user, setUser] = useState();
@@ -69,25 +68,20 @@ const Profile = () => {
 
             {
                 !userPosts ? 'loading' :
-                userPosts.map((post) => (
                     <div className="main_posts">
-                        <div id={post.id} className="post">
-                    <h2 className="user_name"> {post.owner.firstName} {post.owner.lastName}</h2>
-                    <div className="pic_div">
-                     <img src={post.image} className="pictures"></img>
-                    </div>
-                         <div className="likes_box">
-                                <div className="likes_icon">
-                                <FavoriteBorderIcon variant="contained"></FavoriteBorderIcon>
-                                </div>
-                        <p className="likes">{post.likes} Me gusta</p>
-                                <div className="comment_icon">
-                                <ChatBubbleOutlineIcon variant="contained"></ChatBubbleOutlineIcon>
-                                </div>
-                    </div>
-                    </div>
-                        </div>
-                ))
+                    {userPosts.map((post) => (
+                        <PostComponent 
+                        id={post.id} 
+                        profilePic={post.owner.picture}
+                        profileId={post.owner.id} 
+                        profileFirstName={post.owner.firstName}
+                        profileLastName={post.owner.lastName}
+                        postImg={post.image} 
+                        likes={post.likes} 
+                        tags={post.tags}
+                        />  
+                    ))}
+                </div>
 
             }
         </div>

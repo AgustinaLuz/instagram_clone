@@ -1,38 +1,42 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import react, { useState, useEffect } from "react";
+import PostComponent from "./PostComponent";
 import Navbar from "./Navbar";
-import PostComponent from './PostComponent';
 
-const Home = () => {
-    const [posts, setPosts] = useState([]);
+const PostsByTag = () => {
+    const [postsWithTag, setPostsWithTag] = useState();
+    const {tag} = useParams();
 
-    const getPosts = () => {
-        axios.get('https://dummyapi.io/data/v1/post?limit=20', {
+    const getPostsWithTag = () => {
+
+        //get post by tag
+        axios.get(`https://dummyapi.io/data/v1/tag/${tag}/post?limit=10`, {
             headers: {
                 'app-id': '622115ba2b6d9e11d33de1af'
             }
         })
         .then((res) => {
-            setPosts(res.data.data);
+            setPostsWithTag(res.data.data);
             console.table(res.data.data);
-            console.log(posts);
+            console.log(postsWithTag);
         })
-        .catch((err)=> {
+        .catch((err) => {
             console.log(err);
         });
-    }
+    };
 
-    useEffect (() => {
-        getPosts();
-    }, [])
+    useEffect(() => {
+        getPostsWithTag();
+    }, [tag]);
 
-    return (
-        <div className="home_container">
+    return(
+        <div className="postsByTag_container">
         <Navbar />
         {
-            !posts ? 'loading' :
+            !postsWithTag ? 'loading' :
                 <div className="main_posts">
-                    {posts.map((post) => (
+                    {postsWithTag.map((post) => (
                         <PostComponent 
                             id={post.id} 
                             profilePic={post.owner.picture}
@@ -48,7 +52,6 @@ const Home = () => {
         }
         </div>
     )
-
 }
 
-export default Home;
+export default PostsByTag;
