@@ -46,7 +46,7 @@ const Profile = () => {
 
     useEffect(() => {
         getUser();
-    }, []);
+    }, [id]);
 
 
     return (

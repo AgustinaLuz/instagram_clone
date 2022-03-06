@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Comment from "./CommentComponent";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
@@ -29,6 +30,7 @@ const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLast
                     </NavLink>
                 ))
             }
+            <Comment id={id} />
         </div>
     );
 }
