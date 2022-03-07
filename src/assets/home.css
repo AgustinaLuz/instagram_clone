@@ -1,40 +1,75 @@
 /* HOME */
 .home_container {
-  padding-top: 60px;
+	padding-top: 60px;
 }
 .main_posts {
-  width: 500px;
-  margin: auto;
-  margin-top: 40px;
+	width: 500px;
+	margin: auto;
+	margin-top: 40px;
 }
+.user_box_name-pic {
+	display: flex;
+	margin-left: 15px;
+	height: 59px;
+}
+.namePic {
+	align-self: center;
+}
+img.user_pic_box {
+	border-radius: 50px;
+	width: 32px;
+	height: 32px;
+}
+.user_name_box {
+	margin-left: 9px;
+	color: rgba(var(--f75, 38, 38, 38), 1);
+	font-size: 14px;
+	font-weight: 600;
+	align-self: center;
+	text-decoration: none;
+}
+
 .post {
-  background-color: rgba(var(--d87, 255, 255, 255), 1);
-  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
-  border-radius: 3px;
+	background-color: rgba(var(--d87, 255, 255, 255), 1);
+	border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+	border-radius: 3px;
 }
 .user_name {
-  margin: 20px;
-  color: rgba(var(--f75, 38, 38, 38), 1);
+	margin: 20px;
+	color: rgba(var(--f75, 38, 38, 38), 1);
 }
 .pictures {
-  max-width: -webkit-fill-available;
+	max-width: -webkit-fill-available;
 }
 .likes_box {
-  display: flex;
+	display: flex;
 }
 .like_div {
-  width: 30px;
+	width: 30px;
 }
 .likes_icon {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 15px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
 }
 .likes {
-  margin: 20px;
+	margin: 20px;
 }
 .comment_icon {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 15px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+}
+.tags {
+	display: flex;
+	margin-bottom: 18px;
+}
+.tag_box {
+	margin-left: 10px;
+}
+p.tag {
+	color: rgba(var(--fe0, 0, 55, 107), 1);
+}
+a.tag_link {
+	text-decoration: none;
 }

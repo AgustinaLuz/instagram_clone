@@ -9,10 +9,12 @@ const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLast
         <>
             {!onlyPic ?
                 <div id={id} className="post">
-                    <div className="namePic"><img src={profilePic} ></img></div>
-                    <NavLink to={`/profile/${profileId}`}>
-                        <h2 className="user_name"> {profileFirstName} {profileLastName}</h2>
+                    <div className="user_box_name-pic">
+                    <div className="namePic"><img className="user_pic_box" src={profilePic} ></img></div>
+                    <NavLink className="user_name_box" to={`/profile/${profileId}`}>
+                        <div className="user_name_box"> {profileFirstName} {profileLastName}</div>
                     </NavLink>
+                    </div>
                     <div className="pic_div">
                         <img src={postImg} className="pictures"></img>
                     </div>
@@ -20,18 +22,24 @@ const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLast
                                 <div className="likes_icon">
                                     <FavoriteBorderIcon variant="contained"></FavoriteBorderIcon>
                                 </div>
-                        <p className="likes">{likes} {likes == 1 ? "Like" : "Likes"}</p>
                                 <div className="comment_icon">
                                     <ChatBubbleOutlineIcon variant="contained"></ChatBubbleOutlineIcon>
                                 </div>
                     </div>
+                    <div className="likes_box">
+                        <p className="likes">{likes} {likes == 1 ? "Like" : "Likes"}</p>
+                    </div>    
+                    <div className="tags">           
+                    
                     {
                         tags.map((tag) => (
-                            <NavLink to={`/tag/${tag}`}>
-                                <p>{tag}</p>
-                            </NavLink>
+                            <div className="tag_box">
+                            <NavLink className="tag_link" to={`/tag/${tag}`}>
+                                <p className="tag">#{tag}</p>
+                            </NavLink></div>
                         ))
                     }
+                    </div> 
                     <Comment id={id} />
                 </div>
 
