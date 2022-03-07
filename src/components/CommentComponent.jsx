@@ -15,7 +15,7 @@ const Comment = ({id}) => {
         })
         .then((res) => {
             setComments(res.data.data);
-            console.table(res.data.data);
+            // console.table(res.data.data);
             // console.log(userPosts);
         })
         .catch((err) => {
@@ -33,8 +33,10 @@ const Comment = ({id}) => {
                 comments.map((comment) =>
                 <div>
                     <NavLink to={`/profile/${comment.owner.id}`}>
-                        <h2 className="user_name"> {comment.owner.firstName} {comment.owner.LastName}</h2>
+                        <img src={comment.owner.picture}></img>
+                        <h2 className="user_name"> {comment.owner.firstName} {comment.owner.lastName}</h2>
                     </NavLink>
+                        <p>{comment.message}</p>
                 </div>
                 )
              : ""}

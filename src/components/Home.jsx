@@ -14,8 +14,8 @@ const Home = () => {
         })
         .then((res) => {
             setPosts(res.data.data);
-            console.table(res.data.data);
-            console.log(posts);
+            // console.table(res.data.data);
+            // console.log(posts);
         })
         .catch((err)=> {
             console.log(err);
