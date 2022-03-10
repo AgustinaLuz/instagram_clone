@@ -33,6 +33,7 @@ img.user_pic_box {
 	background-color: rgba(var(--d87, 255, 255, 255), 1);
 	border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
 	border-radius: 3px;
+	margin-bottom: 24px;
 }
 .user_name {
 	margin: 20px;
@@ -55,17 +56,48 @@ img.user_pic_box {
 .likes {
 	margin: 20px;
 }
+.user_comment_section {
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
 .comment_icon {
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: 15px;
+}
+.text {
+	margin-left: 15px;
+}
+.user_pic_cols {
+	display: flex;
+}
+.user_box_comment_name {
+	display: flex;
+	margin-left: 15px;
+}
+.user_pic_name_title {
+	margin-left: 9px;
+	color: rgba(var(--f75, 38, 38, 38), 1);
+	font-size: 14px;
+	font-weight: 600;
+	align-self: center;
+	line-height: 18px;
+	text-decoration: none;
+}
+.user_comment_text {
+	margin-left: 10px;
+}
+
+.save_icon {
+	margin-left: auto;
+	margin-right: 5px;
 }
 .tags {
 	display: flex;
 	margin-bottom: 18px;
 }
 .tag_box {
-	margin-left: 10px;
+	margin-left: 15px;
 }
 p.tag {
 	color: rgba(var(--fe0, 0, 55, 107), 1);

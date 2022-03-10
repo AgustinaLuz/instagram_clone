@@ -56,15 +56,23 @@ const Profile = () => {
             !user ? 'loading' :
             
             <div className="profile_main">
-                <div id={user.id} className="profile">                
-                    <div className="user_pic"><img src={user.picture}></img></div>
-                    <h2 className="user_name"> {user.firstName} {user.lastName}</h2>
-                    <p className="user_location"> {user.location.city} {user.location.country}</p>
+                <div className="profile" id={user.id} >                
+                    <div className="user_pic"><img className="user_pic" src={user.picture}></img></div>
+                    <div className="user_info">
+                    <h2 className="user_profile_name"> {user.firstName} {user.lastName}</h2>
+                    <div className="user_location_info">
+                        <div className="user_profile_location_icon">
+                    <img src="https://freesvg.org/img/location_icon.png" width={30} alt="" />
+                    </div>
+                    <p className="user_profile_location"> {user.location.city},</p>
+                    <p className="user_profile_location"> {user.location.country}.</p>
+                    
+                    </div>
+                </div>
                 </div>
             </div>     
             }
 
-            <h1>posts</h1>
 
             {
                 !userPosts ? 'loading' :

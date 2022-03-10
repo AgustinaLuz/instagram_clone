@@ -31,12 +31,18 @@ const Comment = ({id}) => {
         <div>
             {comments ? 
                 comments.map((comment) =>
-                <div>
-                    <NavLink to={`/profile/${comment.owner.id}`}>
-                        <img src={comment.owner.picture}></img>
-                        <h2 className="user_name"> {comment.owner.firstName} {comment.owner.lastName}</h2>
+                <div className="user_comment_section">
+                <div className="user_box_comment_name" >
+                    <NavLink className="user_pic_cols" to={`/profile/${comment.owner.id}`}>
+                        <div className="user_pic_col_1">
+                        <img className="user_pic_box" src={comment.owner.picture}></img></div>
+                        <div className="user_pic_col_2">
+                        <h2 className="user_pic_name_title"> {comment.owner.firstName} {comment.owner.lastName}</h2></div>
                     </NavLink>
-                        <p>{comment.message}</p>
+                    <p className="user_comment_text">{comment.message}</p>
+
+                </div>
+                        
                 </div>
                 )
              : ""}

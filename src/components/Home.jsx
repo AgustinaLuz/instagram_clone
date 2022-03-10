@@ -40,8 +40,10 @@ const Home = () => {
                             profileFirstName={post.owner.firstName}
                             profileLastName={post.owner.lastName}
                             postImg={post.image} 
-                            likes={post.likes} 
+                            likes={post.likes}
+                            text={post.text} 
                             tags={post.tags}
+                            publishDate={post.publishDate}
                             onlyPic={false}
                         />                            
                     ))}

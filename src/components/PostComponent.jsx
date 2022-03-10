@@ -3,8 +3,21 @@ import { NavLink } from "react-router-dom";
 import Comment from "./CommentComponent";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from 'redux'
+import { actionCreators } from "./store/index"
 
-const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLastName, postImg, likes, tags, onlyPic}) => {
+const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLastName, postImg, likes, text, tags, onlyPic}) => {
+    const state = useSelector((state) => state.posts);
+    const dispatch = useDispatch()
+    let postId = id;
+    const { addPost } = bindActionCreators(
+        actionCreators, dispatch
+    );
+
+    //console.log(state);
+    
     return(
         <>
             {!onlyPic ?
@@ -25,10 +38,14 @@ const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLast
                                 <div className="comment_icon">
                                     <ChatBubbleOutlineIcon variant="contained"></ChatBubbleOutlineIcon>
                                 </div>
+                                <img className="save_icon" src="https://cdn.iconscout.com/icon/free/png-256/save-3244517-2701888.png" width={30} alt="save-icon" onClick={() => addPost(postId)}/>
                     </div>
                     <div className="likes_box">
                         <p className="likes">{likes} {likes == 1 ? "Like" : "Likes"}</p>
                     </div>    
+                    <div className="text_box">
+                        <div className="text">{text}</div>
+                    </div>
                     <div className="tags">           
                     
                     {
@@ -39,9 +56,13 @@ const PostComponent = ({id, profilePic, profileId, profileFirstName, profileLast
                             </NavLink></div>
                         ))
                     }
-                    </div> 
+                    </div > 
+                <div className="comment_section">
                     <Comment id={id} />
                 </div>
+
+                </div>
+                
 
                 :
 
