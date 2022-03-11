@@ -37,7 +37,7 @@ const PostsByTag = () => {
             !postsWithTag ? 'loading' :
                 <div className="main_posts">
                     {postsWithTag.map((post) => (
-                        <PostComponent 
+                        <PostComponent key={post.id}
                             id={post.id} 
                             profilePic={post.owner.picture}
                             profileId={post.owner.id} 

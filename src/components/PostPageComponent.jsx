@@ -34,7 +34,7 @@ const PostPageComponent = () => {
                 <div className="main_posts">
                     {
                         !onlyPost ? '' :
-                        <PostComponent 
+                        <PostComponent key={onlyPost.id}
                             id={onlyPost.id} 
                             profilePic={onlyPost.owner.picture}
                             profileId={onlyPost.owner.id} 

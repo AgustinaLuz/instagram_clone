@@ -78,7 +78,7 @@ const Profile = () => {
                 !userPosts ? 'loading' :
                     <div className="main_posts">
                     {userPosts.map((post) => (
-                        <PostComponent 
+                        <PostComponent key={post.id}
                         id={post.id} 
                         profilePic={post.owner.picture}
                         profileId={post.owner.id} 
